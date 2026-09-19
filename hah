@@ -54,6 +54,7 @@ http.request({
         })
 end
     end)()
+ServerHop()
 end
 
 if serverhop then
