@@ -81,7 +81,8 @@ end
 end
 
 for i,v in next, alts do
-   if game.Players:FindFirstChild(v) and game.Players:FindFirstChild(v) ~= LocalPlayer then
+local noob = game.Players:FindFirstChild(v)
+   if noob and noob ~= LocalPlayer then
         interfer = true
    		print("found " .. v ) 
   		SendWebhook(interfer)
