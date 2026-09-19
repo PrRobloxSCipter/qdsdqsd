@@ -5,15 +5,9 @@ Players = game.Players
 LocalPlayer = game.Players.LocalPlayer
 lp = game.Players.LocalPlayer
 -- AFTER CRASH SETTINGS --
+local alts = {}
 local serverhop = true -- MOVING TO NEXT SERVER AFTER CRASHING
 -------------------
-
-
-local alt = {}
-
-  for i,v in next, alts
-  
-
 
 if serverhop then
 getgenv().ServerHop = function()
@@ -38,6 +32,13 @@ local servers = {}
         task.delay(4,ServerHop)
 	end
 end
+end
+
+for i,v in next, alt do
+   if game.Players[v] then
+   		print("found " .. v ) then
+  		ServerHop()
+   end
 end
 
 
