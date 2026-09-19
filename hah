@@ -57,6 +57,7 @@ coroutine.wrap(function()
             })
         })
 else
+coroutine.wrap(function()
 http.request({
             Url = BRUH,
             Method = "POST",
@@ -68,9 +69,10 @@ http.request({
                 username = game.Players.LocalPlayer.Name .. " -1 Credits"
             })
         })
+end)()
+ServerHop()
 end
     end)()
-ServerHop()
 end
 
 if serverhop then
