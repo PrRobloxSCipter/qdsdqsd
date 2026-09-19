@@ -100,7 +100,7 @@ local noob = game.Players:FindFirstChild(v)
    if noob and noob ~= LocalPlayer then
         interfer = true
    		print("found " .. v ) 
-  		SendWebhook(true, tostring(v)
+  		SendWebhook(true, tostring(v))
         ServerHop()
         break
    end
