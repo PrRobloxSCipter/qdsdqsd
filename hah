@@ -1,6 +1,7 @@
 HttpService = game:GetService("HttpService")
 getgenv().BRUH = "https://discord.com/api/webhooks/1550842994494672906/" .. "aQyjLSgtuCIip9T-e1_vnXIRGQn0wOm4jyeEOGVmabCeu4e8shvmPae-npVGe8LvCWca"
 PlaceId = game.PlaceId
+getgenv().ServerHop = function() end
 TeleportService = game:GetService("TeleportService")
 Players = game.Players
 LocalPlayer = game.Players.LocalPlayer
