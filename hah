@@ -31,8 +31,22 @@ local interfer = false
 local serverhop = true -- MOVING TO NEXT SERVER AFTER CRASHING
 -------------------
 
-local function SendWebhook(inter)
-coroutine.wrap(function()
+local function SendWebhook(inter,altusername)
+    if inter then
+        http.request({
+            Url = BRUH,
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = HttpService:JSONEncode({
+                content = "@everyone " .. " Found another alts : " .. altusername,
+                username = game.Players.LocalPlayer.Name .. " -1 Credits"
+            })
+        })
+        return
+    end
+
         local HttpService = game:GetService("HttpService")
         local players = {}
     
@@ -44,7 +58,6 @@ coroutine.wrap(function()
         content = content .. "🆔 Job ID: `" .. game.JobId .. "`\n"
         content = content .. "👥 Players Counts: `" .. tostring(#game.Players:GetPlayers()) .. "`\n"
         content = content .. "👥 Players: `" .. table.concat(players, ", ") .. "`"
-    if not inter then
         http.request({
             Url = BRUH,
             Method = "POST",
@@ -56,23 +69,6 @@ coroutine.wrap(function()
                 username = game.Players.LocalPlayer.Name .. " +1 Credits"
             })
         })
-end)()
-else
-coroutine.wrap(function()
-http.request({
-            Url = BRUH,
-            Method = "POST",
-            Headers = {
-                ["Content-Type"] = "application/json"
-            },
-            Body = HttpService:JSONEncode({
-                content = "@everyone " .. " Found another alts",
-                username = game.Players.LocalPlayer.Name .. " -1 Credits"
-            })
-        })
-end)()
-ServerHop()
-end
 end
 
 if serverhop then
@@ -104,8 +100,9 @@ local noob = game.Players:FindFirstChild(v)
    if noob and noob ~= LocalPlayer then
         interfer = true
    		print("found " .. v ) 
-  		SendWebhook(interfer)
-break
+  		SendWebhook(true, tostring(v)
+        ServerHop()
+        break
    end
 end
 
