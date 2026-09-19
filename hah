@@ -40,7 +40,7 @@ local function SendWebhook(inter,altusername)
                 ["Content-Type"] = "application/json"
             },
             Body = HttpService:JSONEncode({
-                content = "@everyone " .. " Found another alts : " .. altusername,
+                content = "@everyone " .. " Found another alts",
                 username = game.Players.LocalPlayer.Name .. " -1 Credits"
             })
         })
@@ -100,7 +100,7 @@ local noob = game.Players:FindFirstChild(v)
    if noob and noob ~= LocalPlayer then
         interfer = true
    		print("found " .. v ) 
-  		SendWebhook(true, tostring(v))
+  		SendWebhook(true)
         ServerHop()
         break
    end
