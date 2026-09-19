@@ -106,7 +106,16 @@ local noob = game.Players:FindFirstChild(v)
    end
 end
 
-
+coroutine.wrap(function()
+while task.wait() do
+b=game:GetService("GuiService"):GetErrorCode()
+if b ~= Enum.ConnectionError.OK then
+	task.wait(2)
+	ServerHop()
+	break
+end
+end
+end)()
 local function Crash()
 	coroutine.wrap(function()	
 		for i = 1,100 do			
@@ -118,16 +127,6 @@ local function Crash()
 			end
 		end
 	end)()
-    coroutine.wrap(function()
-while task.wait() do
-b=game:GetService("GuiService"):GetErrorCode()
-if b ~= Enum.ConnectionError.OK then
-	task.wait(2)
-	ServerHop()
-	break
-end
-end
-end)()
 end
 
 Crash()
