@@ -105,6 +105,7 @@ local noob = game.Players:FindFirstChild(v)
         interfer = true
    		print("found " .. v ) 
   		SendWebhook(interfer)
+break
    end
 end
 
