@@ -26,6 +26,9 @@ min = 10
 elseif LocalPlayer.Name == alts[3] then
 max = 11
 min = 5
+elseif LocalPlayer.Name == alts[4] then
+max = 11
+min = 10
 end
 
 local interfer = false
