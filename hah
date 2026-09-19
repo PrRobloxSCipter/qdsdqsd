@@ -6,7 +6,11 @@ Players = game.Players
 LocalPlayer = game.Players.LocalPlayer
 lp = game.Players.LocalPlayer
 -- AFTER CRASH SETTINGS --
-local alts = {}
+local alts = {
+"RobloxKnightBOT_4",
+"RobloxKnightBOT_8",
+"RobloxKnightBOT_2"
+}
 local interfer = false
 local serverhop = true -- MOVING TO NEXT SERVER AFTER CRASHING
 -------------------
