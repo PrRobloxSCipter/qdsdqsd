@@ -12,6 +12,21 @@ local alts = {
 "RobloxKnightBOT_8",
 "RobloxKnightBOT_2"
 }
+
+local max
+local min
+
+if LocalPlayer.Name == alts[1] then
+max = 16
+min = 10
+elseif LocalPlayer.Name == alts[2] then
+max = 14
+min = 10
+elseif LocalPlayer.Name == alts[3] then
+max = 11
+min = 5
+end
+
 local interfer = false
 local serverhop = true -- MOVING TO NEXT SERVER AFTER CRASHING
 -------------------
@@ -67,7 +82,7 @@ local servers = {}
 
 	if body and body.data then
 		for i, v in next, body.data do
-			if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
+			if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing >= min and v.playing <= max and v.id ~= JobId then
 				table.insert(servers, 1, v.id)
 			end
 		end
