@@ -62,9 +62,9 @@ local servers = {}
 end
 end
 
-for i,v in next, alt do
-   if game.Players[v] then
-   		print("found " .. v ) then
+for i,v in next, alts do
+   if game.Players[v] and game.Players[v] ~= LocalPlayer then
+   		print("found " .. v ) 
   		ServerHop()
    end
 end
