@@ -9,7 +9,7 @@ lp = game.Players.LocalPlayer
 -- AFTER CRASH SETTINGS --
 local alts = {
 "Shadeylin93",
-"LeFrancaisScripter_9",
+"LeFrancaisScripter_1",
 "LeFrancaisScripter_7",
 "LeFrancaisScripter_3"
 }
