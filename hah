@@ -8,7 +8,7 @@ LocalPlayer = game.Players.LocalPlayer
 lp = game.Players.LocalPlayer
 -- AFTER CRASH SETTINGS --
 local alts = {
-"RobloxKnightBOT_4",
+"Shadeylin93",
 "RobloxKnightBOT_8",
 "RobloxKnightBOT_2",
 "RobloxKnightBOT_9"
