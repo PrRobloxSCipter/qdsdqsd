@@ -10,8 +10,8 @@ lp = game.Players.LocalPlayer
 local alts = {
 "Shadeylin93",
 "LeFrancaisScripter_9",
-"RobloxKnightBOT_2",
-"RobloxKnightBOT_9"
+"LeFrancaisScripter_7",
+"LeFrancaisScripter_3"
 }
 
 local max
