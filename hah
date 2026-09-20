@@ -31,7 +31,7 @@ elseif LocalPlayer.Name == alts[4] then
 max = 10
 min = 3
 elseif LocalPlayer.Name == alts[5] then
-max = 16
+max = 9
 min = 3
 end
 
