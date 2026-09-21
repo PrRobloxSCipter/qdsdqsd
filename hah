@@ -27,7 +27,7 @@ max = 14
 min = 12
 elseif LocalPlayer.Name == alts[3] then
 max = 11
-min = 5
+min = 10
 elseif LocalPlayer.Name == alts[4] then
 max = 10
 min = 3
