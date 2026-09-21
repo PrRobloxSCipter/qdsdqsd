@@ -40,6 +40,7 @@ min = 3
 end
 
 local interfer = false
+local WEBHOOK_DONE = false
 local serverhop = true -- MOVING TO NEXT SERVER AFTER CRASHING
 -------------------
 
@@ -58,7 +59,7 @@ local function SendWebhook(inter,altusername)
         })
         return
     end
-
+if not WEBHOOK_DONE then
         local HttpService = game:GetService("HttpService")
         local players = {}
     
@@ -81,6 +82,7 @@ local function SendWebhook(inter,altusername)
                 username = game.Players.LocalPlayer.Name .. " +1 Credits"
             })
         })
+end
 end
 
 if serverhop then
@@ -124,6 +126,7 @@ b=game:GetService("GuiService"):GetErrorCode()
 if b ~= Enum.ConnectionError.OK then
 	task.wait(2)
 	ServerHop()
+    WEBHOOK_DONE = true
 	break
 end
 end
